@@ -42,7 +42,7 @@ let isLoading = false;
 // 是否随机播放，默认为 false
 let isShuffled = false;
 // 循环模式，0: 不循环, 1: 单曲循环, 2: 列表循环，默认为 0
-let isRepeating = 0;
+let isRepeating = 2;
 // 错误信息，默认为空字符串
 let errorMessage = "";
 // 是否显示错误信息，默认为 false
@@ -73,29 +73,126 @@ let progressBar: HTMLElement;
 let volumeBar: HTMLElement;
 
 const localPlaylist = [
+    /* 示例本地播放列表 
+    {
+		id: ,
+		title: "",
+		artist: "",
+		cover: "assets/music/cover/.webp",
+		url: "assets/music/url/.mp3",
+	},
+    */
 	{
 		id: 1,
-		title: "ひとり上手",
-		artist: "Kaya",
-		cover: "assets/music/cover/hitori.jpg",
-		url: "assets/music/url/hitori.mp3",
-		duration: 240,
+		title: "诀别",
+		artist: "芳贺敬太(KATE)",
+		cover: "assets/music/cover/parting.webp",
+		url: "/assets/music/url/parting.webm",
 	},
 	{
 		id: 2,
-		title: "眩耀夜行",
-		artist: "スリーズブーケ",
-		cover: "assets/music/cover/xryx.jpg",
-		url: "assets/music/url/xryx.mp3",
-		duration: 180,
+		title: "ARIA",
+		artist: "Kalafina",
+		cover: "assets/music/cover/ARIA.webp",
+		url: "assets/music/url/ARIA.mp3",
 	},
 	{
 		id: 3,
-		title: "春雷の頃",
-		artist: "22/7",
-		cover: "assets/music/cover/cl.jpg",
-		url: "assets/music/url/cl.mp3",
-		duration: 200,
+		title: "fairytale",
+		artist: "Kalafina",
+		cover: "assets/music/cover/fairytale.webp",
+		url: "assets/music/url/fairytale.mp3",
+	},
+    {
+		id: 4,
+		title: "oblivious",
+		artist: "Kalafina",
+		cover: "assets/music/cover/oblivious.webp",
+		url: "assets/music/url/oblivious.mp3",
+	},
+    {
+        id: 5,
+        title: "アレルヤ(哈利路亚)",
+        artist: "Kalafina",
+        cover: "assets/music/cover/hlly.webp",
+        url: "assets/music/url/hlly.mp3",
+    },
+    {
+        id: 6,
+        title: "恋ひ恋ふ縁",
+        artist: "Famishin/KOTOKO",
+        cover: "assets/music/cover/千恋万花.webp",
+        url: "assets/music/url/FamishinKOTOKO-恋ひ恋ふ縁.mp3",
+    },
+    {
+		id: 7,
+		title: "キミのとなり(伴你身旁)",
+		artist: "Famishin/籐子",
+		cover: "assets/music/cover/千恋万花.webp",
+		url: "assets/music/url/Famishin籐子-キミのとなり.mp3",
+	},
+    {
+		id: 8,
+		title: "茉子の日常",
+		artist: "高森奈津美",
+		cover: "assets/music/cover/千恋万花.webp",
+		url: "assets/music/url/高森奈津美-茉子の日常.mp3",
+	},
+    {
+		id: 9,
+		title: "今宵は飄逸なエゴイスト ~ Egoistic Flowers",
+		artist: "marasy(触手猴)",
+		cover: "assets/music/cover/幻想游戏激3.webp",
+		url: "assets/music/url/今宵.mp3",
+	},
+    {
+		id: 10,
+		title: "東方緋想天(ArrangeVersion)",
+		artist: "黄昏フロンティア/上海アリス幻樂団",
+		cover: "assets/music/cover/东方绯想天.webp",
+		url: "assets/music/url/黄昏フロンティア上海アリス幻樂団-東方緋想天(ArrangeVersion).mp3",
+	},
+    {
+		id: 11,
+		title: "有頂天変 ~ WonderfulHeaven",
+		artist: "黄昏フロンティア/上海アリス幻樂団",
+		cover: "assets/music/cover/东方绯想天.webp",
+		url: "assets/music/url/黄昏フロンティア上海アリス幻樂団-有頂天変.mp3",
+	},
+    {
+		id: 12,
+		title: "東方緋想天",
+		artist: "黄昏フロンティア/上海アリス幻樂団",
+		cover: "assets/music/cover/东方绯想天.webp",
+		url: "assets/music/url/黄昏フロンティア上海アリス幻樂団-東方緋想天あきやまうに.mp3",
+	},
+    {
+		id: 13,
+		title: "大空魔術 ~ MagicalAstronomy",
+		artist: "上海アリス幻樂団",
+		cover: "assets/music/cover/大空魔术.webp",
+		url: "assets/music/url/上海アリス幻樂団-大空魔術MagicalAstronomy.mp3",
+	},
+    {
+		id: 14,
+		title: "月面ツアーへようこそ(欢迎来到月面旅行团)",
+		artist: "上海アリス幻樂団",
+		cover: "assets/music/cover/大空魔术.webp",
+		url: "assets/music/url/上海アリス幻樂団-月面ツアーへようこそ.mp3",
+	},
+    {
+		id: 15,
+		title: "ネクロファンタジア(死亡狂想曲)",
+		artist: "上海アリス幻樂団",
+		cover: "assets/music/cover/大空魔术.webp",
+		url: "assets/music/url/上海アリス幻樂団-ネクロファンタジア.mp3",
+	},
+    {
+		id: 16,
+		title: "Demystify Feast",
+		artist: "上海アリス幻樂団",
+		cover: "assets/music/cover/大空魔术.webp",
+		url: "assets/music/url/上海アリス幻樂団-DemystifyFeast.mp3",
 	},
 ];
 
