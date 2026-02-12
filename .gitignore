@@ -47,3 +47,9 @@ src/data/bangumi-data.json
 
 # Bilibili generated data
 src/data/bilibili-data.json
+
+#obsidian文件
+.obsidian/
+
+#根目录下用于生成目录的文件
+/toc.py
