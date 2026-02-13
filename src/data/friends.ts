@@ -31,9 +31,9 @@ export const friendsData: FriendItem[] = [
 	{
 		id: 2,
 		title: "宁宁云",
-		imgurl: "https://nnyunidc.cn/themes/web/nnyun-web/assets/img/logo.png",
+		imgurl: "https://nnyunidc.com/themes/web/nnyun-web/assets/img/logo.png",
 		desc: "一个小云服务商，质量还行，一分钱一分货",
-		siteurl: "https://nnyunidc.cn/",
+		siteurl: "https://nnyunidc.com/",
 		tags: ["IDC"],
 	},
 	{
@@ -47,9 +47,9 @@ export const friendsData: FriendItem[] = [
 	{
 	id: 4,
 	title: "昆明湖的博客",
-	imgurl: "https://blog.nnyunidc.cn/assets/home/avatar.webp",
+	imgurl: "https://blog.91vip.ink/assets/home/avatar.webp",
 	desc: "一个柚子厨的博客站",
-	siteurl: "https://blog.nnyunidc.cn/",
+	siteurl: "https://blog.91vip.ink/",
 	tags: ["个人博客"],
 	},
 	{
