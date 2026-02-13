@@ -45,7 +45,7 @@ image: ./cover.webp
 -	7、整合了多语言 
 
 
-但由于网站在国外，访问速度很慢，所以我想能不能自行在本地部署一个呢？欸，还真可以，这位大佬把游戏系统(不包含内容)开源在了Github，根据Wiki教程我们可以自行重构一遍他的网站。\
+但由于网站在国外，访问速度很慢，所以我想能不能自行在本地部署一个呢？欸，还真可以，这位大佬把游戏框架(不包含游戏内容)开源在了Github，根据Wiki教程我们可以自己重构一遍他的网站。\
 \
 有能力的可以直接去Github项目部署了：
 ::github{repo="requinDr/tsukiweb-public"}
@@ -74,7 +74,7 @@ image: ./cover.webp
 ![](./image/5.png)
 将两个压缩包分别解压
 ![](./image/6.png)
-将带有tsukiweb-common的文件夹改名为tsukiweb-common，移动到另一个文件夹根目录
+将名字中带有tsukiweb-common的文件夹改名为`tsukiweb-common`，移动到另一个文件夹根目录
 ![](./image/7.png)
 ![](./image/8.png)
 
@@ -169,8 +169,8 @@ PS:博主没有独显用cpu跑了5个小时
 ![](./image/24.png)
 ![](./image/25.png)
 ### ①添加音乐
-原版音乐已在原版月姬根目录名为bgm的文件夹中，EVERAFTER和月箱的音乐请自行寻找(可以在这个[音乐网站](https://downloads.khinsider.com/game-soundtracks/album/ever-after-music-from-tsukime-reproduction)下载)，我个人非常推荐使用EVERAFTER的音乐\
-进入音乐文件所在目录，创建一个后缀为.txt的文本文件，名字任意\
+原版音乐已在原版月姬根目录名为bgm的文件夹中，EVERAFTER和月箱的音乐请自行寻找(可以在这个[音乐网站](https://downloads.khinsider.com/game-soundtracks/album/ever-after-music-from-tsukime-reproduction)下载)，我个人非常推荐使用`EVERAFTER`的音乐\
+进入音乐文件所在目录，创建一个后缀为`.txt`的文本文件，名字任意\
 加入以下内容：
 ```
 @echo off
@@ -189,8 +189,9 @@ pause
 ![](./image/23.png)
 ### ②添加音效
 找到最开始解包原版月姬中的文件夹`wave`和解包PLUS-DISC中的文件夹`sound`
-![](./image/26.png)![](./image/27.png)
-图中选中的名字中带有`plus_`se字样的文件是不需要的，可以删除。\
+![](./image/26.png)
+图中选中的名字中带有`plus_se`字样的文件是不需要的，可以删除。
+![](./image/27.png)
 剩余文件按使用刚刚的`.bat`文件处理，压缩后不需要修改名字直接放入对应的音效文件夹
 
 <font size=7>**至此，添加游戏内容的步骤已经大功告成了!!!**</font>\
@@ -203,3 +204,4 @@ npm run build
 ```
 等待完成即可\
 完成后根目录出现的`dist`文件夹即为编译好的静态网站，可以部署在本地、服务器、Pages等平台
+![](./image/28.png)
