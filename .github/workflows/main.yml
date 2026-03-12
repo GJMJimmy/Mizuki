@@ -27,19 +27,24 @@ jobs:
       - name: Build
         run: pnpm build
 
-      #部署到服务器
-      - name: Deploy to Staging My server
-        uses: easingthemes/ssh-deploy@v2.1.6
-        env:
-          # 使用GitHub仓库里的secret设置的值
-          SSH_PRIVATE_KEY: ${{ secrets.LYUS_RSA }} 
-          # 源目录，编译后生成的文件目录
-          SOURCE: './dist/'
-          #服务器公网地址
-          REMOTE_HOST: ${{ secrets.LYUS_IP }}
-          #服务器用户名-一般默认root
-          REMOTE_USER: 'root'
-          #服务器中，代码部署的位置
-          TARGET: '/opt/Mizuki'
-          #去除的文件
-          EXCLUDE: "/dist/, /node_modules/"
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+        ssh-private-key: ${{ secrets.LYUS_RSA }}
+
+      - name: pull files
+        run: |
+         ssh root@${{ secrets.LYUS_IP }} "
+          git pull
+        "
+      - name: install dependences
+        run: |
+         ssh root@${{ secrets.LYUS_IP }} "
+          pnpm i
+        "
+      - name: pnpm build
+        run: |
+         ssh root@${{ secrets.LYUS_IP }} "
+          pnpm build
+        "
+
