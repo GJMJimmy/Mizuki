@@ -1,0 +1,45 @@
+name: Auto Deployment
+
+on:
+  push:
+    branches:
+      - master # 只在master上push触发部署
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # 使用ubuntu系统镜像运行自动化脚本
+
+    steps: # 自动化步骤
+      #下载代码仓库
+      - uses: actions/checkout@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      # 安装依赖
+      - name: pnpm install 
+        run: pnpm install 
+    
+      #打包项目
+      - name: Build
+        run: pnpm build
+
+      #部署到服务器
+      - name: Deploy to Staging My server
+        uses: easingthemes/ssh-deploy@v2.1.6
+        env:
+          # 使用GitHub仓库里的secret设置的值
+          SSH_PRIVATE_KEY: ${{ secrets.LYUS_RSA }} 
+          # 源目录，编译后生成的文件目录
+          SOURCE: './dist/'
+          #服务器公网地址
+          REMOTE_HOST: ${{ secrets.LYUS_IP }}
+          #服务器用户名-一般默认root
+          REMOTE_USER: 'root'
+          #服务器中，代码部署的位置
+          TARGET: '/opt/Mizuki'
+          #去除的文件
+          EXCLUDE: "/dist/, /node_modules/"
