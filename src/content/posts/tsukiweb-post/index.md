@@ -148,15 +148,16 @@ node index.js
 在Waifu2x-caffe根目录下打开CMD，输入以下指令：\
 有独显用独显跑：
 ```
-waifu2x-caffe-cui.exe -i "tools/convert-images/input" -o "tools/convert-images/input_x2" -m noise_scale -n 0 -s 2 -b 8 -p cudnn -model_dir models-cunet
+waifu2x-caffe-cui.exe -i "input" -o "input_x2" -m noise_scale -n 0 -s 2 -b 8 -p cudnn -model_dir models-cunet
 ```
 没独显用CPU跑：
 ```
-waifu2x-caffe-cui.exe -i "tools/convert-images/input" -o "tools/convert-images/input_x2" -m noise_scale -n 0 -s 2 -b 8 -p cpu
+waifu2x-caffe-cui.exe -i "input" -o "input_x2" -m noise_scale -n 0 -s 2 -b 8 -p cpu
 ```
 
 **接下来请耐心等待，如果没有独显将会跑的非常慢**\
-PS:博主没有独显用cpu跑了5个小时
+PS1:博主垃圾笔记本没有独显用cpu跑了5个小时\
+PS2:时隔两个月后的博主换了5060笔记本，只用不到5分钟就好了
 ### ③放入图片
 跑完后将文件夹`input`和`input_x2`移动到tsukiweb-public项目的`根目录/tools/convert-images`\
 在该目录打开CMD，输入`node index.js`回车，等待完成即可\
