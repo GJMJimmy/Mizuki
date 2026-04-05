@@ -67,6 +67,14 @@ export const devicesData: DeviceCategory = {
 				"性能垃圾，纯纯轻量办公本",
 			link: "https://detail.zol.com.cn/notebook/index1406762.shtml",
 		},
+		{
+			name: "ThinkBook 16p 2025",
+			image: "/images/device/TB16p.jpg",
+			specs: "Ultra9-275hx + RTX5060",
+			description:
+				"西装暴徒，整机200W性能释放，双雷电+三USB3.2，屏幕240hz+2.5K+P3广色域，夯爆了!",
+			link: "https://www.thinkpad.com/device/ThinkBook-16p",
+		},
 	],
 	游戏机: [
 		{
