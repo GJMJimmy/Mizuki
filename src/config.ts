@@ -211,9 +211,8 @@ export const siteConfig: SiteConfig = {
 		   //sizes: '32x32',              // 可选，图标大小
 		}
 	],
-
 	// 字体配置
-	font: {
+	/*font: {
 		// 注意：自定义字体需要在 src/styles/main.css 中引入字体文件
 		// 注意：字体子集优化功能目前仅支持 TTF 格式字体,开启后需要在生产环境才能看到效果,在Dev环境下显示的是浏览器默认字体!
 		asciiFont: {
@@ -222,7 +221,7 @@ export const siteConfig: SiteConfig = {
 			/*fontFamily: "ZenMaruGothic-Medium",
 			fontWeight: "500",
 			localFonts: ["ZenMaruGothic-Medium.ttf"],
-			enableCompress: true, // 启用字体子集优化，减少字体文件大小*/
+			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 		cjkFont: {
 			// 中日韩字体 - 作为回退字体
@@ -231,7 +230,7 @@ export const siteConfig: SiteConfig = {
 			localFonts: ["萝莉体 第二版.ttf"],
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
-	},
+	}, */
 	showLastModified: true, // 控制“上次编辑”卡片显示的开关
 };
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
