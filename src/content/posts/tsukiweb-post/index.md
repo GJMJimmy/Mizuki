@@ -56,7 +56,7 @@ image: ./cover.webp
 ## 1、使用Git下载(推荐)
 先打开[项目地址](https://github.com/requinDr/tsukiweb-public)复制HTTPS/SSH链接
 
-![](./image/1.png)
+![](image/1.png)
 
 在你想要部署项目的目录下打开CMD或GitBash，输入`git clone --recursive <链接>`，回车
 图省事直接复制下面的也行
@@ -65,25 +65,25 @@ image: ./cover.webp
 ```
  git clone --recursive https://github.com/requinDr/tsukiweb-public.git
 ```
-![](./image/2.png)
+![](image/2.png)
 如图已经下载好了，进入目录tsukiweb-public/tsukiweb-common检查一下，如果有文件就没问题
-![](./image/3.png)
+![](image/3.png)
 ## 2、在浏览器下载
 分别进入[tsukiweb-public](https://github.com/requinDr/tsukiweb-public)和子模块[tsukiweb-common](https://github.com/requinDr/tsukiweb-common)点击`Download ZIP`下载
-![](./image/4.png)
-![](./image/5.png)
+![](image/4.png)
+![](image/5.png)
 将两个压缩包分别解压
-![](./image/6.png)
+![](image/6.png)
 将名字中带有tsukiweb-common的文件夹改名为`tsukiweb-common`，移动到另一个文件夹根目录
-![](./image/7.png)
-![](./image/8.png)
+![](image/7.png)
+![](image/8.png)
 
 # 二、准备工作
 ## 1、安装nodejs
 进入[nodejs](https://nodejs.cn/download/)官网，下载长期支持版本，并安装
-![](./image/9.png)
+![](image/9.png)
 一直Next就行
-![](./image/10.png)
+![](image/10.png)
 安装好后在命令行输入
 ```
 npm -v
@@ -94,14 +94,14 @@ npm -v
 ```
 npm install
 ```
-![](./image/11.png)
+![](image/11.png)
 如图已经安装依赖成功，此时在根目录会生成`node_modules`文件夹
 
 # 三、添加游戏内容
 ## 1、删除代理
 打开根目录的文件`vite.config.ts`
 将如图选中的`proxy块`内容删掉
-![](./image/12.png)
+![](image/12.png)
 注：该代码块的作用是将所有获取游戏文件的链接从本地替换成项目作者的网站，以便在没有添加游戏内容时游玩，但我们要本地部署，所以删掉该代码块
 ## 2、添加游戏文本
 先下载该链接的文件`fullscript_jp.txt`
@@ -114,32 +114,32 @@ https://tsukiweb.holofield.fr/static/jp/fullscript_jp.txt
 ```
 node index.js
 ```
-![](./image/13.png)
+![](image/13.png)
 注：显示not found是因为jp(日语文本)文件夹中没有这四个文件，想看日语的可以自行添加，但缺少不影响中文
 ## 3、添加游戏图片
 ### ①提取图片
 请先自行获取老版月姬的游戏文件，并将其根目录下名为`arc.nsa`的文件解包，教程可以参考我的这篇文章：<a href="/posts/extractdata/">解包Ons游戏文件中后缀为.nsa的资源文件</a>
-![](./image/14.png)
+![](image/14.png)
 可以得到以下文件夹
-![](./image/15.png)
+![](image/15.png)
 文件夹`icon`可以删掉，`image`文件夹内只需要保留`bg`、`event`和`tachi`，其它可以删掉
-![](./image/16.png)
+![](image/16.png)
 在`根目录/tools/transform-sprites`下创建`input`文件夹\
 将`tachi`文件夹内的图片都移动进`input`中\
 在`根目录/tools/transform-sprites`下打开CMD输入`node index.js`\
 完成后得到`output`文件夹
-![](./image/17.png)
+![](image/17.png)
 将处理完的`output`文件夹内的图片移动回`tachi`(tachi文件夹内只需要处理完的图片，不需要最开始提取的)
 
 请自行获取月姬PLUS-DISC的游戏文件，同样解包其根目录下名为`arc.nsa`的文件，解包后得到的文件夹里只需要保留`bgimage`、`fgimage`、`sound`文件夹，其它都可以删了
-![](./image/18.png)
+![](image/18.png)
 `bgimage`改名为`bg`\
 `fgimage`改名为`tachi`
-![](./image/19.png)
+![](image/19.png)
 将文件夹`tachi`内名字带有`seo`的文件，改名为`arisa`
-![](./image/20.png)
+![](image/20.png)
 改名后↓
-![](./image/21.png)
+![](image/21.png)
 将这两个文件夹的内容分别合并到刚刚月姬本体提取出的对应文件夹，有重复文件直接跳过就行了
 ### ②放大图片
 先下载超分工具[Waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases)并解压\
@@ -167,8 +167,8 @@ PS2:时隔两个月后的博主换了5060笔记本，只用不到5分钟就好�
 
 ## 4、添加声音
 创建文件夹，在`根目录/public/static/jp`下创建以下文件夹：
-![](./image/24.png)
-![](./image/25.png)
+![](image/24.png)
+![](image/25.png)
 ### ①添加音乐
 原版音乐已在原版月姬根目录名为bgm的文件夹中，EVERAFTER和月箱的音乐请自行寻找(可以在这个[音乐网站](https://downloads.khinsider.com/game-soundtracks/album/ever-after-music-from-tsukime-reproduction)下载)，我个人非常推荐使用`EVERAFTER`的音乐\
 进入音乐文件所在目录，创建一个后缀为`.txt`的文本文件，名字任意\
@@ -184,15 +184,15 @@ for %%f in (*.flac *.ogg *.wav *.mp3 *.ape) do (
 endlocal
 pause
 ```
-![](./image/22.png)
+![](image/22.png)
 保存后将后缀改为.bat，双击运行\
 运行完成后将得到压缩好的.webm音乐文件，将其名字按数字顺序改成以下形式，然后放入对应版本的音乐文件夹即可
-![](./image/23.png)
+![](image/23.png)
 ### ②添加音效
 找到最开始解包原版月姬中的文件夹`wave`和解包PLUS-DISC中的文件夹`sound`
-![](./image/26.png)
+![](image/26.png)
 图中选中的名字中带有`plus_se`字样的文件是不需要的，可以删除。
-![](./image/27.png)
+![](image/27.png)
 剩余文件按使用刚刚的`.bat`文件处理，压缩后不需要修改名字直接放入对应的音效文件夹
 
 <font size=7>**至此，添加游戏内容的步骤已经大功告成了!!!**</font>\
@@ -205,4 +205,4 @@ npm run build
 ```
 等待完成即可\
 完成后根目录出现的`dist`文件夹即为编译好的静态网站，可以部署在本地、服务器、Pages等平台
-![](./image/28.png)
+![](image/28.png)

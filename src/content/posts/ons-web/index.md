@@ -38,17 +38,17 @@ Onscripter引擎的最初设计目的就是为了方便跨平台移植用NScript
 **如果电脑上已经安装了Python的话可以跳过这一步**
 
 首先打开[Python官网](https://www.python.org/downloads/)，下载红色箭头指的独立安装程序
-![](./image/2.png)
+![](image/2.png)
 下载完成后运行exe文件，勾选Add PATH后安装
-![](./image/3.png)
+![](image/3.png)
 
 ## 2、下载OnscripterYuri
 打开项目的[下载地址](https://github.com/YuriSizuku/OnscripterYuri/releases/latest)，下载web版本
-![](./image/1.png)
+![](image/1.png)
 解压后是这样的
-![](./image/4.png)
+![](image/4.png)
 为了方便，我们将文件`onsyuri.html`名字改成`index.html`
-![](./image/5.png)
+![](image/5.png)
 
 # 二、添加游戏
 有两种构建方式：解包/不解包
@@ -58,33 +58,33 @@ Onscripter引擎的最初设计目的就是为了方便跨平台移植用NScript
 **注意：由于游戏没有解包，每次游玩需要缓存整个nsa游戏文件，不仅加载时间久，而且手机游玩大概率会闪退。**
 
 下载好你要玩的Ons游戏，这里以ever17为例，直接将全部文件解压到OnsYuri的文件夹，不用做任何处理
-![](./image/6.png)
+![](image/6.png)
 在文件路径栏输入`cmd`，然后回车，会出现命令行窗口。
-![](./image/8.png)
+![](image/8.png)
 在命令行窗口中输入
 ```
 py onsyuri_index.py
 ```
 然后回车。
-![](./image/7.png)
+![](image/7.png)
 这样就已经完成了。
 
 ## 2、游戏解包(推荐)
 下载好你要玩的Ons游戏，这里以ever17为例，将全部文件解压到OnsYuri的文件夹
-![](./image/6.png)
+![](image/6.png)
 下载解包软件[ExtractData](https://github.com/lioncash/ExtractData/releases/latest)，解压后得到以下文件
-![](./image/9.png)
+![](image/9.png)
 运行exe文件，点击Open File
-![](./image/10.png)
+![](image/10.png)
 选中所有后缀为`.nsa`的文件
-![](./image/11.png)
+![](image/11.png)
 点击Extract all，选择解压到OnsYuri的文件夹内(和刚刚选中的`.nsa`文件同目录)
-![](./image/12.png)
+![](image/12.png)
 这样游戏内容就已经提取出来了，可以将刚刚选中的`.nsa`文件删掉了。
 在文件路径栏输入`cmd`，然后回车，会出现命令行窗口。
-![](./image/8.png)
+![](image/8.png)
 在命令行窗口中输入`py onsyuri_index.py --lazyload`，然后回车。
-![](./image/13.png)
+![](image/13.png)
 这样就大功告成了。
 
 # 三、启动游戏
@@ -97,11 +97,11 @@ py onsyuri_index.py
 py -m http.server
 ```
 启动网页服务后，然后在浏览器输入`http://127.0.0.1:8000`或`http://localhost:8000`游玩
-![](./image/14.png)
+![](image/14.png)
 如果不想使用8000端口，可以输入`py -m http.server 数字`，然后在浏览器输入`http://127.0.0.1:数字`或`http://localhost:数字`游玩
-![](./image/15.png)
+![](image/15.png)
 接下来就可以尽情游玩了
-![](./image/16.png)
+![](image/16.png)
 
 # 四、注意事项
 最外层目录（即存放OnsYuri的文件夹）名字中不能包含大写字母，但可以包含中文。
