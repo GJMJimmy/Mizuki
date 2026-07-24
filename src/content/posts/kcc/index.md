@@ -6,7 +6,7 @@ description: 使用Kindle Comic Creator制作mobi格式的漫画
 tags:
   - 教程
 category: 教程
-draft: true
+draft: false
 image: ./cover.png
 ---
 - [一、下载&安装](#一下载安装)
