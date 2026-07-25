@@ -47,15 +47,15 @@ export const friendsData: FriendItem[] = [
 	{
 	id: 4,
 	title: "昆明湖的博客",
-	imgurl: "https://blog.91vip.ink/_astro/avatar.Cby3xp1D_Z1xHFme.webp",
+	imgurl: "https://congyu.de/favicon/avatar.webp",
 	desc: "一个柚子厨的博客站",
-	siteurl: "https://blog.91vip.ink/",
+	siteurl: "https://congyu.de/",
 	tags: ["个人博客"],
 	},
 	{
 	id: 5,
 	title: "ZYX-blog",
-	imgurl: "https://zyx-blog.top/_astro/mmexport1754374724013.Cgj7ciy1_2fwvvy.webp",
+	imgurl: "https://zyx-blog.top/_astro/mmexport1754374724013.Cgj7ciy1_Z20JtsY.webp",
 	desc: "一位Arch大佬及命令行爱好者的博客站",
 	siteurl: "https://zyx-blog.top/",
 	tags: ["个人博客"],
