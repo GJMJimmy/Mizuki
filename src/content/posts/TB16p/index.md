@@ -5,7 +5,7 @@ pinned: false
 description: 简单测评一下新换的电脑
 tags:
   - 测评
-  - 日常
+  - 记录
 category: 测评
 draft: false
 image: ./cover.jpg
