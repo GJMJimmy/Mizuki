@@ -39,15 +39,15 @@ export const friendsData: FriendItem[] = [
 	{
 	id: 3,
 	title: "海参云",
-	imgurl: "https://monesy.cn/themes/web/yunyoo/assets/img/logo/LOGO.png",
+	imgurl: "https://monesy.net/themes/web/yunyoo/assets/img/logo/LOGO.png",
 	desc: "一个纯对接的云服务商，总感觉不太靠谱",
-	siteurl: "https://monesy.cn/",
+	siteurl: "https://monesy.net/",
 	tags: ["IDC"],
 	},
 	{
 	id: 4,
 	title: "昆明湖的博客",
-	imgurl: "https://congyu.de/favicon/avatar.webp",
+	imgurl: "https://congyu.de/assets/images/avatar.webp",
 	desc: "一个柚子厨的博客站",
 	siteurl: "https://congyu.de/",
 	tags: ["个人博客"],
