@@ -27,7 +27,8 @@ image: ./cover.webp
   - [UI](#ui)
   - [动画](#动画)
   - [充电](#充电)
-  - [Infinity](#infinity)
+  - [Infinity](#infinity)<br>
+
 由于MIUI过于垃圾，我的小米9使用MIUI12系统打开部分软件会有启动时间极长的问题，于是我准备将小米9刷成高版本类原生系统。\
 我使用的是是`酷安大佬@巧克李`制作的`Project Infinity X`系统刷机包，版本为安卓16。\
 教程适用于大部分高版本系统，除了PE等需要特殊twrp的系统。
@@ -100,7 +101,7 @@ TG频道中目前最新的测试版2.1.1支持Android9-17\
 在Magisk中安装即可
 ![](image/13.png)
 # 四、展示
-PS:由于是gif图，帧率比较低
+PS：由于是gif图，帧率比较低
 ## 锁屏
 ![](image/lock.gif)
 ## 桌面
